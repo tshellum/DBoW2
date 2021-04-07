@@ -63,3 +63,8 @@ install(FILES "${PROJECT_BINARY_DIR}/DBoW2Config.cmake"
   DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/cmake/DBoW2/)
 install(DIRECTORY ${DEPENDENCY_INSTALL_DIR}/ DESTINATION ${CMAKE_INSTALL_PREFIX} OPTIONAL)
 
+# Build tools
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/tools)
+add_executable(bin_vocabulary
+tools/bin_vocabulary.cc)
+target_link_libraries(bin_vocabulary ${PROJECT_NAME})
